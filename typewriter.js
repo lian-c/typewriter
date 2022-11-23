@@ -3,25 +3,18 @@
 //how => loop through each letter and delay 
 const sentence = "hello there from";
 
-let letters = [];
+let passTime = 50 //variable to pass time
 function typewrite(word) {
   for (const char of word) { //each letter of sentence
-    letters.push([char])
+    setTimeout(() => {
+      process.stdout.write(char)
+    }, passTime);
+    passTime += 50 //change the pass time each loop
   }
   // console.log(letters)
-  for (const index in letters) {
-    EachTime(letters[index])
-  }
 }//end of function
 
 
 
 
  typewrite(sentence)
-function EachTime(word) {
-  setTimeout(() => {
-    console.log(word)
-  }, 1000);
-}
-
-// typewrite(sentence)
